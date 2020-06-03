@@ -7,7 +7,7 @@ public class PrintUtil {
 
     public static void printArr(int[] arr) {
         for (int value : arr) {
-            System.out.print(value);
+            System.out.print(value+" ");
         }
         System.out.println("------");
     }
