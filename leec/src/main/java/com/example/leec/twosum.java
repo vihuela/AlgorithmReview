@@ -2,8 +2,6 @@ package com.example.leec;
 
 import java.util.HashMap;
 
-import static com.example.leec.utils.PrintUtil.printArr;
-
 public class twosum {
 
 //    Given an array of integers, return indices of the two numbers such that they add up to a specific target.
@@ -19,7 +17,17 @@ public class twosum {
 
     public static void main(String[] args) {
         int[] arr = new int[]{2, 12121, 11, 7};
-        printArr(twoSum(arr, 9));
+        twoSum1(arr, 9);
+    }
+
+    public static void twoSum1(int[] nums, int target) {
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = 1; j < nums.length; j++) {
+                if (nums[i] == target - nums[j]) {
+                    System.out.println(i + "," + j);
+                }
+            }
+        }
     }
 
     public static int[] twoSum(int[] nums, int target) {
