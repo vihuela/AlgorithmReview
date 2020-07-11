@@ -21,16 +21,14 @@ class MyCircularQueue {
      * Insert an element into the circular queue. Return true if the operation is successful.
      */
     public boolean enQueue(int value) {
-        if (isFull()) return false;
-        if (head == -1) {
-            head++;
+        if (isFull()) {
+            return false;
+        }
+        if (isEmpty()) {
+            head = 0;
         }
 
-        tail++;
-        //尾指针超过数组长度
-        if (head != 0 && tail >= size - 1) {
-            tail = 0;
-        }
+        tail = (tail + 1) % size;
         datas[tail] = value;
         return true;
     }
@@ -39,8 +37,16 @@ class MyCircularQueue {
      * Delete an element from the circular queue. Return true if the operation is successful.
      */
     public boolean deQueue() {
+        if (isEmpty()) {
+            return false;
+        }
+        if (head == tail) {
+            head = -1;
+            tail = -1;
+            return true;
+        }
         datas[head] = 0;
-        head++;
+        head = (head + 1) % size;
         return true;
     }
 
@@ -48,6 +54,9 @@ class MyCircularQueue {
      * Get the front item from the queue.
      */
     public int Front() {
+        if (isEmpty()) {
+            return -1;
+        }
         return datas[head];
     }
 
@@ -55,6 +64,9 @@ class MyCircularQueue {
      * Get the last item from the queue.
      */
     public int Rear() {
+        if (isEmpty()) {
+            return -1;
+        }
         return datas[tail];
     }
 
@@ -62,15 +74,14 @@ class MyCircularQueue {
      * Checks whether the circular queue is empty or not.
      */
     public boolean isEmpty() {
-        return head == -1 && tail == -1;
+        return head == -1;
     }
 
     /**
      * Checks whether the circular queue is full or not.
      */
     public boolean isFull() {
-        return (head == 0 && tail == size - 1) || //指针在头尾的情况
-                (head == tail + 1);//指针在中间的情况
+        return ((tail + 1) % size) == head;
     }
 }
 
