@@ -1,21 +1,21 @@
-package com.example.leec.stack;//ʹ�ö���ʵ��ջ�����в�����
+package com.example.leec.stack;//使用队列实现栈的下列操作：
 //
 // 
-// push(x) -- Ԫ�� x ��ջ 
-// pop() -- �Ƴ�ջ��Ԫ�� 
-// top() -- ��ȡջ��Ԫ�� 
-// empty() -- ����ջ�Ƿ�Ϊ�� 
+// push(x) -- 元素 x 入栈 
+// pop() -- 移除栈顶元素 
+// top() -- 获取栈顶元素 
+// empty() -- 返回栈是否为空 
 // 
 //
-// ע��: 
+// 注意: 
 //
 // 
-// ��ֻ��ʹ�ö��еĻ�������-- Ҳ���� push to back, peek/pop from front, size, �� is empty ��Щ�����Ǻ�
-//���ġ� 
-// ����ʹ�õ�����Ҳ����֧�ֶ��С� �����ʹ�� list ���� deque��˫�˶��У���ģ��һ������ , ֻҪ�Ǳ�׼�Ķ��в������ɡ� 
-// ����Լ������в���������Ч�ģ�����, ��һ���յ�ջ������� pop ���� top �������� 
+// 你只能使用队列的基本操作-- 也就是 push to back, peek/pop from front, size, 和 is empty 这些操作是合
+//法的。 
+// 你所使用的语言也许不支持队列。 你可以使用 list 或者 deque（双端队列）来模拟一个队列 , 只要是标准的队列操作即可。 
+// 你可以假设所有操作都是有效的（例如, 对一个空的栈不会调用 pop 或者 top 操作）。 
 // 
-// Related Topics ջ ��� 
+// Related Topics 栈 设计 
 // ? 199 ? 0
 
 
