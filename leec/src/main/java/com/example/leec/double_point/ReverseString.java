@@ -1,4 +1,4 @@
-package com.example.leec.string;
+package com.example.leec.double_point;
 
 
 public class ReverseString {
